@@ -30,7 +30,8 @@ public final class DeviceDownDAO {
 		final String sql = "INSERT  INTO devicedown(deviceid, company, storecode, storename, rdatetime, reportdate, timestamping, previousdatetime, frameno, processed) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		try(final PreparedStatement stmt = connection.prepareStatement(sql)) {
 			stmt.setString(1, deviceDown.getDeviceid());
-			stmt.setString(2, deviceDown.getCompany());
+			final String company = deviceDown.getCompany() != null ? deviceDown.getCompany().toUpperCase() : null;
+			stmt.setString(2, company);
 			stmt.setString(3, deviceDown.getStorecode());
 			stmt.setString(4, deviceDown.getStorename());
 			final Timestamp rdatetime = Timestamp.valueOf(deviceDown.getRdatetime());

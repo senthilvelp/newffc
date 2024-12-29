@@ -14,6 +14,7 @@ public final class DeviceDown {
 	private LocalDateTime timestamping;
 	private LocalDateTime previousdatetime;
 	private String frameno;
+	private boolean processed;
 	
 	public long getId() {
 		return id;
@@ -74,6 +75,12 @@ public final class DeviceDown {
 	}
 	public void setFrameno(String frameno) {
 		this.frameno = frameno;
+	}
+	public boolean isProcessed() {
+		return processed;
+	}
+	public void setProcessed(boolean processed) {
+		this.processed = processed;
 	}
 	
 	
