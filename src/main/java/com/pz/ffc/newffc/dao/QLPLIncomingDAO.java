@@ -1,4 +1,4 @@
-package com.pz.ffc.newffc;
+package com.pz.ffc.newffc.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

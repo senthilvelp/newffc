@@ -12,7 +12,7 @@ public class GSMSignalFunction implements Function<String, Integer>{
 			throw new NullPointerException("The input value is null");
 		}
 		
-		final String gsmSignal = t.substring(gsmSignalPosition, gsmSignalLength);
+		final String gsmSignal = t.substring(gsmSignalPosition, gsmSignalPosition + gsmSignalLength);
 		return Integer.valueOf(gsmSignal);
 	}
 }

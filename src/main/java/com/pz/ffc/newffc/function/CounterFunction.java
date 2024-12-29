@@ -2,19 +2,19 @@ package com.pz.ffc.newffc.function;
 
 import java.util.function.BiFunction;
 
-public class CounterFunction implements BiFunction<String, Integer, Integer>{
+public class CounterFunction implements BiFunction<String, Integer, String>{
 	
 	private final int length = 4;
 
 	@Override
-	public Integer apply(String t, Integer u) {
+	public String apply(String t, Integer u) {
 		
 		if ( t == null) {
 			throw new NullPointerException("The input value is null");
 		}
-		
-		final String strCounter = t.substring(u.intValue(), length);
-		return Integer.valueOf(strCounter);
+		final int startPosition = u.intValue();
+		final String strCounter = t.substring(startPosition, startPosition + length);
+		return strCounter;
 	}
 
 }

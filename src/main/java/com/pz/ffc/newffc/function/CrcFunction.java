@@ -14,7 +14,7 @@ public class CrcFunction implements Function<String, String>{
 			throw new NullPointerException("The input value is null");
 		}
 		
-		final String crc = t.substring(crcStartPosition, crcLength);
+		final String crc = t.substring(crcStartPosition, crcStartPosition + crcLength);
 		
 		return crc;
 	}

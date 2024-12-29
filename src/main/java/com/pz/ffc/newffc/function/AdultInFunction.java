@@ -1,19 +1,19 @@
 package com.pz.ffc.newffc.function;
 
-import java.util.function.BiFunction;
+import java.util.function.Function;
 
-public class AdultInFunction implements BiFunction<String, Integer, Integer>{
+public class AdultInFunction implements Function<String, String>{
 
 	private final int audultInStartPosition = 35;
 	
 	@Override
-	public Integer apply(String t, Integer u) {
+	public String apply(String t) {
 		if (t == null) {
 			throw new NullPointerException("the input is null");
 		}
 		
 		final CounterFunction counterFunction = new CounterFunction();
-		final Integer adultIncount = counterFunction.apply(t, audultInStartPosition);
+		final String adultIncount = counterFunction.apply(t, audultInStartPosition);
 		
 		return adultIncount;
 

@@ -1,19 +1,19 @@
 package com.pz.ffc.newffc.function;
 
-import java.util.function.BiFunction;
+import java.util.function.Function;
 
-public class GroupOutFunction implements BiFunction<String, Integer, Integer>{
+public class GroupOutFunction implements Function<String, String>{
 
-	private final int groupOutStartPosition = 55;
+	private final int groupOutStartPosition = 79;
 	
 	@Override
-	public Integer apply(String t, Integer u) {
+	public String apply(String t) {
 		if (t == null) {
 			throw new NullPointerException("the input is null");
 		}
 		
 		final CounterFunction counterFunction = new CounterFunction();
-		final Integer groupOutCount = counterFunction.apply(t, groupOutStartPosition);
+		final String groupOutCount = counterFunction.apply(t, groupOutStartPosition);
 		
 		return groupOutCount;
 

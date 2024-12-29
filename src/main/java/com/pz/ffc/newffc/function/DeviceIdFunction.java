@@ -8,6 +8,7 @@ public class DeviceIdFunction implements Function<String, String> {
 
 	private final int deviceLength = 10;
 	private final int deviceStartPosition = 3;
+	
 	@Override
 	public String apply(String t) {
 		if ( t == null) {
@@ -17,7 +18,7 @@ public class DeviceIdFunction implements Function<String, String> {
 			throw new InvalidException("the length of the input is less than the device length");
 		}
 		
-		final String deviceid = t.substring(deviceStartPosition, deviceLength);
+		final String deviceid = t.substring(deviceStartPosition, deviceStartPosition + deviceLength);
 		return deviceid;
 	}
 

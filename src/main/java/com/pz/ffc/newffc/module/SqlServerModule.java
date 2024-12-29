@@ -1,4 +1,4 @@
-package com.pz.ffc.newffc;
+package com.pz.ffc.newffc.module;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -44,6 +44,12 @@ public final class SqlServerModule extends AbstractModule{
 			connection = sqlServerModule.dataSourceSqlServer().getConnection();
 		}
 		return connection;
+	}
+	
+	public void close() throws SQLException, IOException {
+		if (connection != null && !connection.isClosed()) {
+			connection.close();
+		}
 	}
 	
 	@Provides

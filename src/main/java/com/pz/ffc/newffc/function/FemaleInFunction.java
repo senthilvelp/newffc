@@ -1,11 +1,10 @@
 package com.pz.ffc.newffc.function;
 
-import java.util.function.BiFunction;
 import java.util.function.Function;
 
-public class ChildInFunction implements Function<String, String>{
+public class FemaleInFunction implements Function<String, String>{
 
-	private final int childInStartPosition = 43;
+	private final int femaleOutStartPosition = 63;
 	
 	@Override
 	public String apply(String t) {
@@ -14,9 +13,9 @@ public class ChildInFunction implements Function<String, String>{
 		}
 		
 		final CounterFunction counterFunction = new CounterFunction();
-		final String childIncount = counterFunction.apply(t, childInStartPosition);
+		final String adultIncount = counterFunction.apply(t, femaleOutStartPosition);
 		
-		return childIncount;
+		return adultIncount;
 
 	}
 

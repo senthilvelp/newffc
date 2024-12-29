@@ -1,19 +1,19 @@
 package com.pz.ffc.newffc.function;
 
-import java.util.function.BiFunction;
+import java.util.function.Function;
 
-public class StaffInFunction implements BiFunction<String, Integer, Integer>{
+public class StaffInFunction implements Function<String, String>{
 
-	private final int staffInStartPosition = 59;
+	private final int staffInStartPosition = 67;
 	
 	@Override
-	public Integer apply(String t, Integer u) {
+	public String apply(String t) {
 		if (t == null) {
 			throw new NullPointerException("the input is null");
 		}
 		
 		final CounterFunction counterFunction = new CounterFunction();
-		final Integer staffIncount = counterFunction.apply(t, staffInStartPosition);
+		final String staffIncount = counterFunction.apply(t, staffInStartPosition);
 		
 		return staffIncount;
 

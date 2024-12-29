@@ -1,19 +1,20 @@
 package com.pz.ffc.newffc.function;
 
 import java.util.function.BiFunction;
+import java.util.function.Function;
 
-public class GroupInFunction implements BiFunction<String, Integer, Integer>{
+public class GroupInFunction implements Function<String, String>{
 
-	private final int groupInStartPosition = 51;
+	private final int groupInStartPosition = 75;
 	
 	@Override
-	public Integer apply(String t, Integer u) {
+	public String apply(String t) {
 		if (t == null) {
 			throw new NullPointerException("the input is null");
 		}
 		
 		final CounterFunction counterFunction = new CounterFunction();
-		final Integer groupInCount = counterFunction.apply(t, groupInStartPosition);
+		final String groupInCount = counterFunction.apply(t, groupInStartPosition);
 		
 		return groupInCount;
 
